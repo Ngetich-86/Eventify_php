@@ -1,0 +1,36 @@
+.navbar {
+  background-color: #04040a;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row !important;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 20px;
+  
+  z-index: 1000;
+}
+.navbar-brand {
+  color: #efe3e3;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.navbar-nav {
+  display: flex;
+  flex-direction: row;
+  gap: 2.5rem;
+}
+
+.navbar-nav .nav-link {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.fa-bars {
+  font-size: 28px;
+  color: #ffffff;
+  cursor: pointer;
+}
