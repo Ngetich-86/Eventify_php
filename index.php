@@ -3,32 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles/navbar.css">
+    <title>🎈Event✨fy🎇</title>
+    <link rel="stylesheet" href="styles/index.css">
 </head>
 <body>
-    
-    <!-- <nav class="navbar">
-            <a class="navbar-brand" href="#">🎈Event✨fy🎇</a>
-                    <i class="fas fa-bars" id="toggleNav"></i>
-                    <div class="navbar-nav">
-                        <a class="nav-link" href="index.php"><i class="fas fa-tachometer-alt"></i> Home</a>
-                        <a class="nav-link" href="patient.php"><i class="fas fa-user"></i> Events</a>
-                        <a class="nav-link" href="doctors.php"><i class="fas fa-user-md"></i> Categories</a>
-                        <a class="nav-link" href="medicine.php"><i class="fas fa-pills"></i> Create Events</a>
-                        <a class="nav-link" href="appointment.php"><i class="far fa-calendar-alt"></i> Organizors</a>
-                    </div>
-        </nav> -->
-        <nav class="navbar">
-                <a class="navbar-brand" href="#">🎈Event✨fy🎇</a>
-                <i class="fas fa-bars" id="toggleNav"></i>
-                <div class="navbar-nav">
-                    <a class="nav-link" href="index.php"><i class="fas fa-tachometer-alt"></i> Home</a>
-                    <a class="nav-link" href="patient.php"><i class="fas fa-user"></i> Events</a>
-                    <a class="nav-link" href="doctors.php"><i class="fas fa-user-md"></i> Categories</a>
-                    <a class="nav-link" href="medicine.php"><i class="fas fa-pills"></i> Create Events</a>
-                    <a class="nav-link" href="appointment.php"><i class="far fa-calendar-alt"></i> Organizors</a>
-                </div>
-            </nav>
+    <div class="home_title" style="text-align: center; color: black; margin-top: 50px;"> 
+        <h1>Home dashboard</h1>
+    </div> 
+     <?php
+            include 'components/navbar.php';
+            include 'Database/Database.php';
+
+        
+
+            // Check connection
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            }
+            
+            // Query to fetch all rows from the events table
+            $sql = "SELECT * FROM events";
+            $result = $conn->query($sql);
+            
+            // Check if there are rows in the result set
+            if ($result->num_rows > 0) {
+                // Output data of each row
+                while($row = $result->fetch_assoc()) {
+                    echo '<div class="card">';
+                                echo '<h2>' . $row["event_name"] . '</h2>';
+                                echo '<p><strong>Event ID:</strong> ' . $row["event_id"] . '</p>';
+                                echo '<p><strong>Description:</strong> ' . $row["description"] . '</p>';
+                                echo '<p><strong>Location:</strong> ' . $row["location"] . '</p>';
+                                echo '<p><strong>Event Date:</strong> ' . $row["event_date"] . '</p>';
+                                echo '<p><strong>Status:</strong> ' . $row["status"] . '</p>';
+                                echo '</div>';
+                }
+            } else {
+                echo "0 results";
+            }
+            
+            // Close connection
+            $conn->close();
+            ?>
+       
+
+
 </body>
 </html>

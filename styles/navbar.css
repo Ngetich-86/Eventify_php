@@ -9,8 +9,9 @@
   justify-content: space-around;
   align-items: center;
   padding: 10px 20px;
-  
   z-index: 1000;
+  margin-bottom: 30px;
+ 
 }
 .navbar-brand {
   color: #efe3e3;
@@ -33,4 +34,9 @@
   font-size: 28px;
   color: #ffffff;
   cursor: pointer;
+}
+.home_title{
+  margin: 50px;
+    text-align: center;
+    color: rgb(2, 50, 34);
 }
