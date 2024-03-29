@@ -1,0 +1,52 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #912c2c;
+
+}
+form{
+    background-color: rgb(235, 150, 174);
+   width: 50vw;
+      min-width: 300px;
+      border: 2px solid rgb(0, 0, 0);
+}
+label,col{
+    font-size: 20px;
+    /* font-weight: bold; */
+    color: rgb(236, 18, 18);
+     margin-bottom: 5px;
+        font-weight: bold;
+}
+input{
+    width: 300px;
+    height: 30px;
+    /* margin: 10px; */
+     margin-right: 5px;
+     border: 2px solid goldenrod;
+}
+button{
+    width: 100px;
+    height: 40px;
+    margin: 10px;
+    background-color: rgb(63, 234, 11);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+}
+
+/* ====================== */
+/* styles/events.css */
+
+/* Center the title */
+.home_title {
+    text-align: center;
+    color: black;
+    margin-top: 50px;
+}
+
